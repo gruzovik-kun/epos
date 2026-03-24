@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Натангенс — эпос школьного бессмертия | Артём Залупенко | Дзен</title>
+    <meta name="description" content="Артём Залупенко представляет: трилогия о Натане Рыжове — человеке, который угрожал ФСБ учительнице, прыгал из окна под крики «Нюхайте бебру!» и проверял крепость льда прыжками в марте.">
+    <style>
+        :root {
+            --zenColorBgPrimary: #fff;
+            --zenColorBgSecondary: #eff0f2;
+            --zenColorTextPrimary: rgba(6, 6, 15, 0.87);
+            --zenColorTextSecondary: rgba(6, 6, 15, 0.6);
+            --zenColorTextTertiary: rgba(6, 6, 15, 0.38);
+            --zenColorStrokePrimary: rgba(6, 6, 15, 0.25);
+            --zenColorAccent: #ff5317;
+            --zenColorRed: #d32f2f;
+            --dzen-font-family: -apple-system, system-ui, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--dzen-font-family);
+            background-color: var(--zenColorBgPrimary);
+            color: var(--zenColorTextPrimary);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .article-container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 20px 24px 40px;
+        }
+
+        .author-block {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            background-color: var(--zenColorBgSecondary);
+            flex-shrink: 0;
+        }
+        .author-name {
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--zenColorTextPrimary);
+            text-decoration: none;
+        }
+        .author-stats {
+            font-size: 13px;
+            color: var(--zenColorTextSecondary);
+        }
+
+        .article-title {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 52px;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #d32f2f 0%, #ff5317 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .article-subtitle {
+            font-size: 18px;
+            line-height: 26px;
+            color: var(--zenColorTextSecondary);
+            margin-bottom: 24px;
+            border-left: 3px solid var(--zenColorAccent);
+            padding-left: 16px;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            font-size: 13px;
+            color: var(--zenColorTextSecondary);
+            border-bottom: 1px solid var(--zenColorStrokePrimary);
+            padding-bottom: 16px;
+        }
+
+        .article-content {
+            font-size: 18px;
+            line-height: 28px;
+        }
+
+        .article-content p {
+            margin: 0 0 20px 0;
+        }
+
+        .legend-card {
+            background: linear-gradient(135deg, var(--zenColorBgSecondary) 0%, #fff 100%);
+            border-radius: 20px;
+            padding: 28px;
+            margin: 40px 0;
+            border: 1px solid var(--zenColorStrokePrimary);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .legend-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+        }
+        .legend-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--zenColorAccent);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px dashed var(--zenColorStrokePrimary);
+            padding-bottom: 12px;
+        }
+        .legend-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--zenColorTextTertiary);
+            line-height: 1;
+        }
+
+        .jacket-highlight {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border-left: 4px solid var(--zenColorRed);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 16px;
+        }
+        .jacket-text {
+            font-weight: 700;
+            color: var(--zenColorRed);
+        }
+
+        .article-image {
+            margin: 32px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--zenColorBgSecondary) 0%, #e0e0e0 100%);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid var(--zenColorStrokePrimary);
+        }
+        .image-caption {
+            font-size: 13px;
+            color: var(--zenColorTextTertiary);
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        .quote {
+            background: var(--zenColorBgSecondary);
+            border-left: 4px solid var(--zenColorAccent);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 16px;
+            font-style: italic;
+            color: var(--zenColorTextSecondary);
+        }
+        .quote-author {
+            margin-top: 12px;
+            font-style: normal;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--zenColorTextPrimary);
+        }
+
+        .footnote {
+            font-size: 14px;
+            color: var(--zenColorTextTertiary);
+            border-top: 1px solid var(--zenColorStrokePrimary);
+            margin-top: 32px;
+            padding-top: 24px;
+        }
+
+        .timeline {
+            background: var(--zenColorBgSecondary);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 32px 0;
+        }
+        .timeline-item {
+            display: flex;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--zenColorStrokePrimary);
+        }
+
+        .img_box {
+            margin: 1.5rem 0;
+        }
+        .img_box img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .img_descript {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 0.5rem;
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+        }
+        .timeline-date {
+            font-weight: 700;
+            color: var(--zenColorAccent);
+            min-width: 140px;
+        }
+        .glowing-text {
+            font-weight: 700;
+            color: var(--zenColorRed);
+        }
+
+        @media (max-width: 768px) {
+            .article-container {
+                padding: 16px 20px 32px;
+            }
+            .article-title {
+                font-size: 32px;
+                line-height: 42px;
+            }
+            .legend-title {
+                font-size: 22px;
+            }
+            .legend-number {
+                font-size: 36px;
+            }
+            .timeline-date {
+                min-width: 110px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-container">
+        <div class="author-block">
+            <div class="author-avatar" style="background-image: url('https://avatars.dzeninfra.ru/get-zen-logos/1640044/pub_5c0f6ad06f88d200aae6651d_5c0f6b0c55af0e00aaf24945/xh');"></div>
+            <div class="author-info">
+                <a href="#" class="author-name" rel="dofollow">Артём Залупенко</a>
+                
+            </div>
+        </div>
+
+        <h1 class="article-title">Натангенс<br>Эпос школьного бессмертия</h1>
+        <div class="article-subtitle">
+            Три подвига Натана Рыжова. Три грани безумия. Одна легенда, которая греет учительские сердца холодными вечерами.
+        </div>
+
+        <div class="article-meta">
+            <div class="article-meta-item"> 24 марта 2026</div>
+            <div class="article-meta-item">👁 1.5 просмотра</div>
+            <div class="article-meta-item">⏱ фиг знает сколько минут чтения</div>
+           
+        </div>
+
+        <div class="article-content">
+            <div class="jacket-highlight">
+                <span class="jacket-text">⚠️ ЭКСКЛЮЗИВНОЕ РАССЛЕДОВАНИЕ</span><br>
+                Автор этих строк лично знаком с героем. Все факты проверены в школьных коридорах, учительской и на месте событий. Некоторые имена изменены по этическим соображениям, но сам Натан — настоящий. Как и его легенда.
+            </div>
+
+            <p>В школе №12 города Сарова есть имена, которые произносят шёпотом. Есть истории, которые передают из уст в уста. А есть <strong>НАТАН</strong>. Одно это имя заставляет учителей вздрагивать, а одноклассников — замирать в предвкушении. Истории человека, чей коэффициент полезного действия равен бесконечности, а коэффициент опасности для системы образования не поддаётся исчислению.</p>
+            
+            <div class="img_box">
+                    <img src="натанчик.jpg" alt="">
+                    <div class="img_descript">Натангенс</div>
+                </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Начальная школа</div>
+                    <div>«Я на вас ФСБ вызову» — первая угроза государственной безопасности</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Конец 7-го класса</div>
+                    <div>«Нюхайте бебру!» — легендарный прыжок из окна кабинета музыки</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">14 марта 2026</div>
+                    <div>«Да не ссы, лёд крепкий!» — эпопея на тонком льду</div>
+                </div>
+            </div>
+
+            <!-- ПОДВИГ 1: ФСБ -->
+            <div class="legend-card">
+                <div class="legend-title">
+                    <span class="legend-number">I</span>
+                    <span>«Я на вас ФСБ вызову» — истоки легенды</span>
+                </div>
+                
+                <p><strong>Время действия:</strong> Начальная школа. Эпоха, когда оценки ставили наклейками, а главным авторитетом был тот, у кого больше всего «смайликов».<br>
+                <strong>Место:</strong> Кабинет ИЗО, где властвовала Вера Васильевна — учительница, чей взгляд заставлял сохнуть акварель на палитре.<br>
+                <strong>Участники:</strong> Натан Рыжов (тогда ещё просто Натан), Вера Васильевна (легендарная изошка), и, конечно, ФСБ (о котором никто не слышал, но все боялись).</p>
+                
+                <div class="quote">
+                    «Вера Васильевна была грозой началки. Она могла одним словом заставить плакать даже самых отъявленных хулиганов. Но она не знала, с кем связалась.»
+                    <div class="quote-author">— Анонимный источник из параллельного класса</div>
+                </div>
+                
+                <p>Это был конец урока ИЗО. Солнце клонилось к закату (ну, или просто было пасмурно, но для драматургии лучше думать, что к закату). Ученики по очереди подходили к Вере Васильевне и демонстрировали плоды своих художественных мук.</p>
+                
+                <p>Натан сидел на последней парте и делал вид, что очень занят важным делом. Например, рассматривал рисунок на парте, который был там ещё до его рождения. Когда очередь дошла до него, он подошёл к учительскому столу с видом человека, который сейчас предъявит миру шедевр.</p>
+                
+                <p>Вера Васильевна посмотрела на него поверх очков. В её взгляде читалось: «Ну, что на этот раз?»</p>
+                
+                <p>— <strong>Где альбом?</strong> — спросила она голосом, от которого у первоклассников подкашивались колени.</p>
+                
+                <p>Натан выдержал паузу. Достойную "Оскара". Потом, не повышая тона, произнёс фразу, которая навсегда вписала его имя в школьные скрижали:</p>
+                
+                <div class="quote" style="margin: 16px 0;">
+                    «Дома...»
+                </div>
+                
+                <p>Это было сказано так, будто он оставил дома не альбом, а секретные документы государственной важности. Вера Васильевна, привыкшая к оправданиям, вдруг почувствовала что-то неладное. Что-то в интонации этого не по годам спокойного мальчика заставило её внутренний компас тревоги зашкалить.</p>
+                
+                <p>Но она была учителем с многолетним стажем. Она не могла сдаться. И началось.</p>
+                
+                <p>— <strong>Бездарь! —</strong> загремело на весь класс. — <strong>Ты вообще что-нибудь приносил за этот год?!</strong></p>
+                
+                <p>Натан стоял, как скала. Ветер перемен обдувал его невидимый плащ. Вера Васильевна распалялась всё больше:</p>
+                
+                <p>— <strong>Безответственный! Ничего тебе не нужно! Родителей вызову!</strong></p>
+                
+                <p>И вот тогда, в тот самый момент, когда класс затаил дыхание, а мухи на потолке замерли в воздухе, Натан медленно развернулся. Сделал два шага к своей парте. И, не оборачиваясь, бросил через плечо:</p>
+                
+                <div class="quote" style="margin: 16px 0;">
+                    <span class="glowing-text">«Я на вас ФСБ вызову.»</span>
+                </div>
+                
+                <p>Класс взорвался. Кто-то заржал, кто-то замер в ужасе, кто-то начал лихорадочно соображать, можно ли вызвать ФСБ на учительницу ИЗО и что за это будет. Вера Васильевна, по свидетельству очевидцев, на несколько секунд потеряла дар речи. Это были самые длинные секунды в истории начальной школы №12.</p>
+                
+                <p>Угроза была зафиксирована. Написана докладная. В дело пошли тяжёлые артиллерийские орудия — директор, завуч, родительский комитет. Но тут в игру вступил секретный агент — мама Натана, работавшая в той же школе <span class="glowing-text">социальным педагогом</span>.</p>
+                
+                <p>Что там произошло за закрытыми дверями — неизвестно. Источники говорят о "конструктивном диалоге", "психоэмоциональном состоянии ребёнка" и "необходимости индивидуального подхода". Но факт остаётся фактом: докладная была <span class="glowing-text">аннулирована</span>. Дело замяли. Натан вернулся в класс с видом человека, который только что предотвратил третью мировую войну.</p>
+                
+                <div class="img_box">
+                    <img src="сигма.jpg" alt="">
+                    <div class="img_descript"></div>
+                </div>
+
+            <!-- ПОДВИГ 2: ПРЫЖОК ИЗ ОКНА -->
+            <div class="legend-card">
+                <div class="legend-title">
+                    <span class="legend-number">II</span>
+                    <span>«Нюхайте бебру!» — операция "Свобода"</span>
+                </div>
+                
+                <p><strong>Время действия:</strong> Конец 7-го класса. Весна. Гормоны играют, окна открыты, и у каждого есть шанс стать бессмертным.<br>
+                <strong>Место:</strong> Кабинет музыки. Первый этаж. Роковое окно.<br>
+                <strong>Участники:</strong> Натан Рыжов, Ольга Викторовна (учительница музыки), весь класс и, конечно, рюкзак, брошенный в окно первым.</p>
+                
+                
+                
+                <p>Это была обычная весенняя пятница. Солнце светило. Птицы пели. А в кабинете музыки на первом этаже царила смертельная тоска. Ольга Викторовна, уткнувшись в телефон, что-то листала. Класс, привыкший к такому развитию событий, занимался своими делами. Кто-то играл в "Морской бой", кто-то списывал домашку, кто-то просто смотрел в окно и мечтал о свободе.</p>
+                
+                <p>Натан смотрел в окно. И мечтал. Ольга Викторовна, не поднимая головы от телефона, что-то буркнула про "поведение". Натан не услышал — он был уже на другой планете. Потом она куда-то вышла. Говорят — за чаем. Говорят — на минуту. Но в историю входят не те, кто ждёт, а те, кто действует.</p>
+                
+                <p>Натан встал. Подошёл к окну. Открыл его. Класс замер. Ну, первые две секунды. А потом пошёл такой гвалт, что, наверное, было слышно даже в соседней школе.</p>
+                
+                
+                
+                <p>Натан не обращал внимания. Он был в своей вселенной. Он кинул рюкзак через окно — тот живописно приземлился в кусты сирени, которые уже ждали свою жертву. Потом Натан сел на подоконник. Свесил ноги. Обернулся. Класс затаил дыхание.</p>
+                
+                <p>И тогда он произнёс. Фразу. Легендарную. Бессмертную. Ту, которую будут повторять ученики и через десять, и через двадцать лет:</p>
+                
+                <div class="quote" style="margin: 16px 0;">
+                    <span class="glowing-text">«Нюхайте бебру!»</span>
+                </div>
+                
+                <div class="img_box">
+                    <img src="окно.jpg" alt="Натан на подоконике">
+                    <div class="img_descript">"Нюхайте бебру!"</div>
+                </div>
+
+
+                <p>И спрыгнул.</p>
+                
+                <p>Что было дальше — известно каждому. Кусты сирени приняли удар на себя. Рюкзак был уже там, поджидал. Натан встал. Отряхнулся. Посмотрел на окно, откуда только что совершил побег.</p>
+                
+                
+                <div class="quote">
+                    «Я потом видео с его прыжком в ТикТок выложил, так оно 5,7 млн просмотров набрало!".»
+                    <div class="quote-author">— Артём Сухов, друг Натана и свидетель событий</div>
+                </div>
+                
+                 </div>
+
+            <!-- ПОДВИГ 3: ЛЁД -->
+            <div class="legend-card">
+                <div class="legend-title">
+                    <span class="legend-number">III</span>
+                    <span>«Да не ссы, лёд крепкий!» — ледовая эпопея</span>
+                </div>
+                
+                <p><strong>Время действия:</strong> 14 марта 2026 года. Весна. Снег тает, лёд становится коварным, а Натану, как всегда, всё равно.<br>
+                <strong>Место:</strong> Река за лесом. То самое место, где нормальные люди зимой катаются на коньках, а весной обходят стороной.<br>
+                <strong>Участники:</strong> Натан Рыжов, Артём Сухов (свидетель), местная фауна (напугана до смерти).</p>
+                
+                <div class="quote">
+                    «Если вы думаете, что после прыжка из окна Натан стал осторожнее — вы ничего не поняли про Натана. Прыжок не сделал его трусом. Он сделал его бессмертным в собственных глазах. А бессмертие, как известно, требует новых доказательств.»
+                    <div class="quote-author">— Автор</div>
+                </div>
+                
+                <p>Это случилось 14 марта 2026 года. Запомните эту дату. В этот день законы физики, биологии и здравого смысла были поставлены под сомнение одним человеком.</p>
+                
+                <p>Натан с Артёмом гуляли где-то в лесу. Источники расходятся во мнениях, что они там делали. Официальная версия — "дышали свежим воздухом". Неофициальная — "искали закладки и приключений на жопу". Учитывая личность главного героя, скорее всего, правдива вторая.</p>
+                
+                <p>Они спустились к реке. Артём, как нормальный человек, пошёл по берегу, по земле. Твёрдой. Надёжной. Не тающей под ногами. Натан посмотрел на друга, потом на лёд, потом снова на друга. В его голове, вероятно, пронеслась мысль, которая посещает всех великих людей перед великими свершениями:</p>
+                
+                <div class="quote" style="margin: 16px 0;">
+                    «А слабо?»
+                </div>
+                
+                <p>— <strong>Натан, ты дидиблат? —</strong> спросил Артём, когда увидел, куда направляется его друг. — <strong>Там же лёд тонкий! Март на дворе!</strong></p>
+                
+                <p>Натан не обернулся. Он шагнул на лёд.</p>
+                
+                <p>— <strong>Да не ссы, лёд крепкий! —</strong> бросил он через плечо голосом человека, который либо знает тайны мироздания, либо просто забыл, что такое страх.</p>
+                
+                <p>Первые несколько метров были скучными. Лёд не трещал. Даже не прогибался. Натан шёл, и ничто не предвещало беды. И вот тут, как сообщают наши источники, Натану <span class="glowing-text">стало скучно</span>.</p>
+                
+                <p>Он остановился. Посмотрел на лёд под ногами. И принял решение, которое навсегда войдёт в анналы школьного безумия. Он начал <span class="glowing-text">прыгать</span>. Со всей силы. На тонком весеннем льду. В марте.</p>
+                
+                
+                
+                <p>Натан уже вошёл в раж. Прыжок. Ничего. Прыжок. Ничего. Ещё прыжок. И вдруг — хруст. Тот самый звук, от которого у любого нормального человека кровь стынет в жилах. Лёд провалился.</p>
+                
+                <p>Натан провалился по щиколотку.</p>
+                
+                <p>То есть, давайте будем честны: драматизма в этом моменте было бы больше, если бы он ушёл под воду с головой. Но Натан — не тот человек, который делает что-то наполовину. Он провалился ровно настолько, чтобы испортить обувь, но не настолько, чтобы прекратить веселье.</p>
+                
+                <p>Он вылез. Мокрый. Холодный. Счастливый. Артём, по словам очевидцев, стоял на берегу и сгибался пополам от хохота.</p>
+                
+                
+                <p>Домой он пришёл мокрый. Мама, по словам самого Натана, устроила ему "люлей". Много люлей. Разных люлей. Педагогических, воспитательных и просто материнских. Но, как известно, никакие люли не могут остановить человека, который уже доказал себе, что он бессмертен.</p>
+                
+                <div class="quote">
+                    «Ну а чё вы хотели - это Натан...»
+                    <div class="quote-author">— Артём Сухов, друг Натана и единственный свидетель ледовой эпопеи</div>
+                </div>
+                <div class="img_box">
+                    <img src="нг.jpg" alt="">
+                    <div class="img_descript">К сожалению, фото с места проишествия нету, поэтому держите новогоднего Натанчика:)</div>
+                </div>
+                </div>
+
+            <!-- ЭПИЛОГ -->
+            
+
+            <div class="quote">
+                «Натангенс - самый сасный мальчик в школе❤»
+                <div class="quote-author">— Неизвестная поклоница Натана</div>
+            </div>
+
+            <div class="footnote">
+                * Автор выражает благодарность всем, кто помогал собирать материал для этого расследования. Особое спасибо Натану, который не только не запретил публикацию, но и с удовольствием дополнил некоторые детали. Цитаты восстановлены по воспоминаниям очевидцев. Все совпадения с реальными учителями случайны, но если вы узнали себя — знайте, вы тоже часть легенды.
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
